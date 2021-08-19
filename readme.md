@@ -1,6 +1,6 @@
 ﻿# WesBos Challenge - #30DaysOfCode
 
-I wasn't sure I know Javascript and I have been learning for a while now, so I decided to do the [WesBos challenge](https://javascript30.com/). I am pretty impressed by how much I could do without checking the videos and also grateful for all I didn't know how to do but learned while doing this.
+I have been learning Javascript for a while now and it's been great so far but I haven't really done much projects. I came across the [WesBos challenge](https://javascript30.com/) and decided to get on it to see how much I already know and how much I'll learn. The challenge seems like a great one to learn and practice Javascript since every project here is done with Vanilla JS. I am pretty excited about this and will keep updating this until I complete all 30 projects.
 
 **Start:** 07/25/2021
 
