@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+<body>
+
+
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+    </div>
+
+
+  <style>
+    html {
+      background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+      background-size: cover;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid white;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: black;
+      position: absolute;
+      top: 50%;
+      transform: rotate(90deg);
+      transform-origin: 100%;
+      transition-timing-function: cubic-bezier(0.1, 0.82, 0.65, 1);
+    }
+
+    @media (max-width: 700px){
+      .clock{
+        transform: scale(0.8);
+      }
+    }
+
+  </style>
+
+  <script>
+    // Selectors
+
+    const secondHand = document.querySelector(".second-hand");
+    const minuteHand = document.querySelector(".min-hand");
+    const hourHand = document.querySelector(".hour-hand");
+
+    setInterval(setClock, 1/1000);
+    function setClock() {
+      const now = new Date()
+      console.log(now);
+      const second = now.getSeconds();
+      const minute = now.getMinutes();
+      const hour = now.getHours();
+
+      // Adding 90 because we've already moved the clock's hands by 90 degree in our css in order to get it to point to 00/12
+
+      const secondsDegree = (second*6) + 90; 
+      //Since there are 60 seconds in a standard clock, to get one second to equal 1 deg, we have to get the clock to contain 360 seconds and to do that, we can extend the seconds by 60 i.e multiply the 60 that is currently available on the clock by 6 to get it to 360. That way, 360 seconds will be = to 360deg and 1 second will be = 1 degree
+      const minuteDegree = (minute*6)+ 90;
+      // There are 12 hours in a clock. To extend it to 360 hours so that 360h = 360deg and 1h = 1 deg, we multiply 12 by 30
+      const hourDegree = (hour*30) + 90;
+
+      secondHand.style.transform =`rotate(${secondsDegree}deg)`;
+      minuteHand.style.transform = `rotate(${minuteDegree}deg)`;
+      hourHand.style.transform = `rotate(${hourDegree}deg)`;
+
+    }
+
+  </script>
+</body>
+</html>
