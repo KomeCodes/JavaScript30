@@ -3,7 +3,7 @@
 **Date:** 09/11/2021
 **Status:** Completed
 
-![CSS VARIABLES](../03-CSSVariable/cssvariable.png)
+![CSS VARIABLES](../03-CSSVariables/cssvariable.png)
 
 ## The Process
 
