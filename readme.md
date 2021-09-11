@@ -12,8 +12,8 @@ Nº | Day        | Description            | Status
 --|-----------|------------------------|---
 01|07/25/2021 |[JavaScript Drum Kit](/01-DrumKit) | ✅
 02|07/25/2021 |[JS and CSS Clock](/02-jsClock) | ✅
-03|xx/xx/2021 |[CSS Variables](/03-CSSVariables) | 🔵
-04|xx/xx/2021 |[Array Cardio Day 01](/04-ArrayCardioDay-1) | 
+03|xx/xx/2021 |[CSS Variables](/03-CSSVariables) | ✅
+04|xx/xx/2021 |[Array Cardio Day 01](/04-ArrayCardioDay-1) | 🔵
 05|xx/xx/2021 |[Flex Panel Image Gallery](/05-FlexPanelGallery) | 
 06|xx/xx/2021|[Type Ahead](/06-TypeAhead) | 
 07|xx/xx/2021 |[Array Cardio Day 02](/07-ArrayCardioDay-2) | 
