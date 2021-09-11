@@ -3,60 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Scoped CSS Variables and JS</title>
-    <style>
-      :root {
-        --base: #ffc600;
-        --spacing: 15px;
-        --blur: 2px;
-      }
-      body {
-        width: 100%;
-        text-align: left;
-        background: #193549;
-        color: white;
-        font-family: "helvetica neue", sans-serif;
-        font-weight: 100;
-        font-size: 40px;
-      }
-      .container {
-        width: 90%;
-        margin: 5% auto; 
-        display: flex;
-        flex-direction: column;
-      }
-      h2{
-          text-align: center;
-        }
-      .highlight {
-        color: var(--base);
-      }
-
-      .controls {
-        width: 60%;
-        margin: 30px auto;
-        display: block;
-        /* flex-direction: column; */
-        text-align: left;
-      }
-      input {
-          width: 100px;
-          margin-top: 10px;
-          display: inline-block;
-      }
-
-      img {
-        padding: var(--spacing);
-        background-color: var(--base);
-        filter: blur(var(--blur));
-      }
-
-      @media (max-width: 575px) {
-        body {
-          font-size: 20px;
-          text-align: center;
-        } 
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container">
@@ -64,37 +11,45 @@
 
       <div class="controls">
         <div>
-          <label for="spacing">Spacing:</label>
-        <input
-          id="spacing"
-          type="range"
-          name="spacing"
-          min="10"
-          max="200"
-          value="10"
-          data-sizing="px"
-        />
+          <label for="spacing">Spacing: </label>
+          <div class="input-container">
+            <input
+              id="spacing"
+              type="range"
+              name="spacing"
+              min="10"
+              max="200"
+              value="10"
+              data-sizing="px"
+            />
+          </div>
         </div>
 
         <div>
-          <label for="blur">Blur:</label>
-        <input
-          id="blur"
-          type="range"
-          name="blur"
-          min="0"
-          max="25"
-          value="10"
-          data-sizing="px"
-        />
+          <label for="blur">Blur: </label>
+          <div class="input-container">
+            <input
+              id="blur"
+              type="range"
+              name="blur"
+              min="0"
+              max="25"
+              value="10"
+              data-sizing="px"
+            />
+          </div>
         </div>
         <div>
-          <label for="base">Base Color:</label>
-        <input id="base" type="color" name="base" value="#ffc600" />
+          <label for="base">Base Color: </label>
+          <div class="input-container">
+            <input id="base" type="color" name="base" value="#f33f3f" />
+          </div>
         </div>
       </div>
 
-      <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
+      <div class="image-block">
+        <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
+      </div>
     </div>
 
     <script>
@@ -103,9 +58,14 @@
       inputs.forEach((input) =>
         input.addEventListener("mousemove", handleUpdate)
       );
-      // console.log(inputs);
+
+      // This function checks the root element and updates the css variables created on it with the value of the input element, when there's a change or mouve move event. Note that we gave names to the input elements that corresponds with the variable names we set on the root element, hence this.name.
+
       function handleUpdate() {
-        // To get the "px', assign the data attribute created in the HTML to a variable, then concatenate the string to the value
+        // To get the "px', assign the data attribute created in the HTML to a variable, then concatenate the string to the input value. This is because the inputs spacing and blur will always be a number but to make it a valid css value, we need to add the unit (px).
+
+        // Base Color is already a valid css string value and we'll not need to attach px, hence, the; or empty string (|| " ").
+
         const valueSuffix = this.dataset.sizing || "";
         document.documentElement.style.setProperty(
           `--${this.name}`,

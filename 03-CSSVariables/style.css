@@ -1,0 +1,149 @@
+:root {
+    box-sizing: border-box;
+    --base: #f33f3f;
+    --spacing: 5px;
+    --blur: 2px;
+    --track-background: #4e6b80;
+  }
+  body {
+    text-align: left;
+    background: #193549;
+    color: whitesmoke;
+    font-family: "helvetica neue", sans-serif;
+    font-weight: 100;
+    font-size: 40px;
+  }
+  .container {
+    width: 95%;
+    margin: 5% auto;
+    display: flex;
+    flex-direction: column;
+  }
+  h2 {
+    text-align: center;
+  }
+  .highlight {
+    color: var(--base);
+  }
+
+  .controls {
+    width: 60%;
+    margin: 30px auto;
+    display: block;
+    text-align: left;
+  }
+  .controls div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: left;
+    align-items: center;
+  }
+  .input-container{
+    width: 110px;
+    background: none;
+    border: transparent;
+    outline: none;
+  }
+  input {
+    width: 100px;
+    background: transparent;
+  }
+  .image-block {
+    /* width: 100%; */
+    margin: 0 auto;
+  }
+
+  img {
+    width: 100%;
+    padding: var(--spacing);
+    background-color: var(--base);
+    filter: blur(var(--blur));
+  }
+
+  /* STYLING THE RANGE INPUT ELEMENT */
+  /* Removing base styles */
+
+  input[type="range"] {
+    -webkit-appearance: none; 
+    margin: 10px 0;
+    background: transparent;
+  }
+
+  input[type="range"]:focus {
+    outline: none;
+  }
+
+  /* Custom range styles */
+
+  /* for Chrome */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--base);
+    cursor: pointer;
+    margin-top: -6px;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    outline: none;
+    height: 10px;
+    cursor: pointer;
+    background: var(--track-background);
+    border-radius: 25px;
+  }
+
+  input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: transparent;
+    border: 0.5px solid white;
+  }
+
+  /* for Firefox */
+  input[type="range"]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--base);
+    cursor: pointer;
+  }
+  input[type="range"]::-moz-range-track {
+    outline: none;
+    height: 10px;
+    cursor: pointer;
+    background: var(--track-background);
+    border-radius: 25px;
+  }
+
+  /* for Internet Explorer */
+  input[type="range"]::-ms-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--base);
+    cursor: pointer;
+  }
+  input[type="range"]::-ms-track {
+    outline: none;
+    height: 10px;
+    cursor: pointer;
+    background: var(--track-background);
+    border-radius: 25px;
+  }
+
+  /* Smaller screens */
+
+  @media (max-width: 696px) {
+    body {
+      font-size: 20px;
+      text-align: center;
+    }
+    .container {
+      /* width: 95%; */
+      margin: 10% auto;
+    }
+    @media (max-width: 321px) {
+      body {
+        font-size: 16px;
+      }
+    }
+  }
