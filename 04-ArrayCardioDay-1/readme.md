@@ -7,7 +7,7 @@
 
 ## The Process
 
-I watched the tutorial video once and proceeded to do it on my own, as usual. I really enjoyed doing this one because now, I am less scared of these Array methods. It does save a lot of time.
+I watched the tutorial video once and proceeded to do it on my own, as usual. I really enjoyed doing this one because now, I am less scared of these Array methods. It does save a lot of time. Also happy with how easy it was for me to recreate without going back to the video.
 
 ## About the adjustments I made
 
