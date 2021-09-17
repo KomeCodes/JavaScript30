@@ -11,7 +11,7 @@ I love this project. It is so fun to create and pretty! Making it responsive was
 
 Anyhoo! This project is my one of my favs so far. It was a good reminder of the beauty that is CSS 🙇🏾‍♀️ . This is also my first time feeling comfortable with flexbox because it reminded me of what "flex: 1;" actually does, Haha! I never seem to remember that it existed so I've been sticking to CSS Grids, until now. I also don't know when I'll remind which of the justifys* is for which. Is it justify-content or items. I always have to google this 😭  or just keep trying all until one works 🥴 .  
 
-For this project, I followed the usual process by watching the video once then replicating it. It was going smoothly until I was stuck for some hours trying to figure out why the transformed paragraphs stopped falling into place after I added the transitionend event listener. Then, it occurred to me to change the e.propertyName to event.propertyName. Ok, I googled it first, but yeah. This going to google why using "e" works sometimes but some other times, it doesnt.  
+For this project, I followed the usual process by watching the video once then replicating it. It was going smoothly until I was stuck for some hours trying to figure out why the transformed paragraphs stopped falling into place after I added the transitionend event listener. Then, it occurred to me to change the e.propertyName to event.propertyName. Ok, I googled it first, but yeah. I am still going to learn why using "e" works sometimes but other times, it doesnt.  
 
 ## About the adjustments I made
 
